@@ -1,0 +1,47 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'maven-publish'
+
+configurations.all { 
+	resolutionStrategy.cacheChangingModulesFor 0, 'seconds' 
+}
+
+repositories {
+	maven{ url "http://localhost:8081/nexus/content/groups/public/"  }
+	//mavenCentral()
+}
+
+dependencies { 
+	compile fileTree(dir: 'lib', include: '*.jar')
+	compile 'javax.servlet:javax.servlet-api:3.0.1'
+	/*compile ('com.tydic.uda:uda:1.2') {
+		exclude group: 'org.springframework', module: 'spring-context'
+	}	
+	compile files('D://data/src/javaBase/build/libs/javaBase.jar')*/
+} 
+
+[compileJava, javadoc, compileTestJava]*.options*.encoding = 'UTF-8'
+
+eclipse {
+	classpath {
+		downloadSources=false
+	}
+  wtp {
+    facet {
+      facet name: 'java', version: '1.7'
+      facet name: 'jst.web', version: '3.0'
+      facet name: 'wst.jsdt.web', version: '1.0'
+		}
+	}
+}
+
+/*
+idea {
+	module {
+		downloadJavadoc = false
+		downloadSources = false
+	}
+	System.setProperty('http.proxyHost', '127.0.0.1') 
+	System.setProperty('http.proxyPort', '80')    
+}*/
