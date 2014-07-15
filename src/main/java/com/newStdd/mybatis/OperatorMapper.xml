@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.newStdd.mybatis.OperatorMapper">
+	<parameterMap type="com.newStdd.po.Operator" id="parameterMapOperator">
+		<parameter property="operatorId" />
+		<parameter property="operatorName" />
+		<parameter property="loginCode" />
+		<parameter property="loginPassword" />
+	</parameterMap>
+	<resultMap type="com.newStdd.po.Operator" id="resultMapOperator">
+		<result property="operatorId"  column="operator_id" />
+		<result property="operatorName"  column="operator_name" />
+		<result property="loginCode"  column="login_code" />
+		<result property="loginPassword"  column="login_password" />
+	</resultMap>
+	
+	<insert id="insertOperator" parameterMap="parameterMapOperator">
+		insert into operator (operator_id,operator_name,login_code,login_password) values (#{operatorId},#{operatorName},#{loginCode},#{loginPassword})
+	</insert>
+</mapper>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	<!--DispatcherServlet Context: defines this servlet's request-processing infrastructure-->
+	<!--Enables the Spring MVC @Controller programming model-->
+	<annotation-driven/>
+	<!--Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory-->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/jsp/springMvc/"/>
+		<!--可为空,方便实现自已的依据扩展名来选择视图解释类的逻辑-->
+		<beans:property name="suffix" value=".jsp"/>
+		<!--JSP模板页面需要使用JSTL标签库，classpath中必须包含jstl的相关jar包
+		<beans:property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>-->
+	</beans:bean>
+	<!--启动包扫描功能，注册带有@Controller、@Service、@repository、@Component、@Configuration的类为spring bean，包名可用逗号分隔-->
+	<context:component-scan base-package="com.newStdd.springMvc"/>
+	<!--拦截器
+	<interceptors>
+		<beans:bean class="com.core.mvc.MyInteceptor"/>
+	</interceptors>-->
+	<!--对静态资源文件的访问  方案一 使用默认的Servlet来响应静态文件
+	<default-servlet-handler/>-->
+	<!--对静态资源文件的访问  方案二 由Spring读出到内存中再响应http
+	<resources mapping="/images/**" location="/images/" cache-period="31556926"/>-->
+</beans:beans>

@@ -1,0 +1,57 @@
+body {
+	height: 100%;
+	background-color: #EEEEEE;
+	margin: 0;
+}
+
+html {
+	height: 100%;
+}
+
+header nav li {
+	list-style: none outside none;
+	display: inline-block;
+}
+
+header nav a:link, header nav a:visited {
+	background-color: transparent;
+	color: #FFFFFF;
+}
+
+footer {
+	background-color: #EEEEEE;
+	text-align: center;
+}
+
+nav {
+	background-color: #444444;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+#divContainer {
+	background-color: #FFFFFF;
+	margin: 0 auto;
+	width: 80%;
+}
+
+#divContent {
+	height: 90%;
+}
+
+.prompt {color: red;}
+
+/**
+	solid：实线
+	border对tr不起作用
+	border-collapse:边框合并 为collapse时合并
+**/
+.table {
+	border:1px solid;
+	border-collapse:collapse;
+}
+.td {border: 1px solid;}
+.th {border: 1px solid;}

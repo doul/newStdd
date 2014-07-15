@@ -12,13 +12,31 @@ repositories {
 	//mavenCentral()
 }
 
+ext {
+	springVersion = "4.0.6.RELEASE"
+	mybatisVersion = "3.2.7"
+	hibernateVersion = "3.6.10.Final"
+}
+
 dependencies { 
-	compile fileTree(dir: 'lib', include: '*.jar')
-	compile 'javax.servlet:javax.servlet-api:3.0.1'
-	/*compile ('com.tydic.uda:uda:1.2') {
-		exclude group: 'org.springframework', module: 'spring-context'
+	compile ("org.apache.commons:commons-dbcp2:2.0.1")
+	compile ("mysql:mysql-connector-java:5.1.31")
+	/*for aop*/
+	compile ("org.aspectj:aspectjweaver:1.8.1")
+	compile ("org.springframework:spring-webmvc:${springVersion}")
+	/* for mybatis sqlSessionFactory*/
+	compile ("org.mybatis:mybatis-spring:1.2.2")
+	compile ("org.mybatis:mybatis:${mybatisVersion}")
+	/*for hibernate LocalSessionFactoryBean*/
+	compile ("org.springframework:spring-orm:${springVersion}")
+	compile ("org.hibernate:hibernate-core:${hibernateVersion}")
+	compile fileTree(dir: "lib", include: '*.jar')
+	compile ("javax.servlet:javax.servlet-api:3.0.1")	
+	testCompile ("junit:junit:4.11")
+	/*compile ("com.tydic.uda:uda:1.2") {
+		exclude group: "org.springframework", module: "spring-context"
 	}	
-	compile files('D://data/src/javaBase/build/libs/javaBase.jar')*/
+	compile files("D://data/src/javaBase/build/libs/javaBase.jar")*/
 } 
 
 [compileJava, javadoc, compileTestJava]*.options*.encoding = 'UTF-8'
