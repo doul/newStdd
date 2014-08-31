@@ -6,7 +6,7 @@ import com.newStdd.po.Operator;
 
 public class OperatorDao extends HibernateDaoSupport {
 	
-  public void save(Operator operater){
+  public void save(Operator operater) {
   	getSessionFactory().getCurrentSession().save(operater);
 //  	currentSession().save(operater);
 }
