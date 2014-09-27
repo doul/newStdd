@@ -3,6 +3,11 @@ apply plugin: 'war'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'maven-publish'
 
+/*
+System.setProperty('http.proxyHost', '127.0.0.1') 
+System.setProperty('http.proxyPort', '80')  
+*/
+
 configurations.all { 
 	resolutionStrategy.cacheChangingModulesFor 0, 'seconds' 
 }
@@ -60,6 +65,4 @@ idea {
 		downloadJavadoc = false
 		downloadSources = false
 	}
-}*/
-	System.setProperty('http.proxyHost', '127.0.0.1') 
-	System.setProperty('http.proxyPort', '80')   
+}*/ 
