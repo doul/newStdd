@@ -8,7 +8,7 @@ import com.newStdd.util.FileUtil;
 
 public class Rename {
 	public static void main(String[] args) throws ParseException {
-		String directory= "d:\\新建文件夹\\";
+		String directory= "c:\\data\\pic\\rename\\";
 		File fileDirectory= new File(directory);
 		File[] files= fileDirectory.listFiles();
 		int count= 0;
