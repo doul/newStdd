@@ -1,24 +1,24 @@
 apply plugin: 'java'
 apply plugin: 'war'
-apply plugin: 'eclipse-wtp'
-apply plugin: 'maven-publish'
+//apply plugin: 'eclipse-wtp'
+//apply plugin: 'maven-publish'
 
 /*
 System.setProperty('http.proxyHost', '127.0.0.1') 
 System.setProperty('http.proxyPort', '80')  
 */
 
-configurations.all { 
+/*configurations.all {
 	resolutionStrategy.cacheChangingModulesFor 0, 'seconds' 
 }
-
+*/
 repositories {
-	maven{ url "http://localhost:8081/nexus/content/groups/public/"  }
-	//mavenCentral()
+	//maven{ url "http://localhost:8081/nexus/content/groups/public/"  }
+	mavenCentral()
 }
 
 ext {
-	springVersion = "4.0.6.RELEASE"
+	springVersion = "4.2.5.RELEASE"
 	mybatisVersion = "3.2.7"
 	hibernateVersion = "3.6.10.Final"
 }
@@ -44,12 +44,13 @@ dependencies {
 	compile files("D://data/src/javaBase/build/libs/javaBase.jar")*/
 } 
 
-[compileJava, javadoc, compileTestJava]*.options*.encoding = 'UTF-8'
+/*[compileJava, javadoc, compileTestJava]*.options*.encoding = 'UTF-8'*/
 
-eclipse {
+/*eclipse {
 	classpath {
 		downloadSources=false
 	}
+
   wtp {
     facet {
       facet name: 'java', version: '1.7'
@@ -57,12 +58,12 @@ eclipse {
       facet name: 'wst.jsdt.web', version: '1.0'
 		}
 	}
-}
-
+}*/
 /*
 idea {
 	module {
 		downloadJavadoc = false
 		downloadSources = false
 	}
-}*/ 
+}
+*/
